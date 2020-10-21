@@ -1,3 +1,4 @@
+---- Feature extraction & Data Munging --------------
 
 val df = spark.read.format("csv").option("header","true").option("inferSchema","true").option("quoteAll","true").load("hotel_reviews/tripadvisor_hotel_reviews.csv")
 
@@ -143,7 +144,7 @@ val model = SVMWithSGD.train(trainSet, numIterations)
 
 ERROR DataValidators: Classification labels should be 0 or 1. Found 12096 invalid labels
 
----- Multiclass logistic regression --------------
+---- MLlib Multiclass logistic regression --------------
 
 import org.apache.spark.mllib.classification.{LogisticRegressionModel, LogisticRegressionWithLBFGS}
 val numIterations = 100
